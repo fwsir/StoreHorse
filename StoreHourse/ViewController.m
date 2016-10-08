@@ -40,7 +40,6 @@
                                   reverseLoadingAnimation:YES
                                   internalAnimationFactor:0.5];
     
-    self.automaticallyAdjustsScrollViewInsets
 
 }
 
