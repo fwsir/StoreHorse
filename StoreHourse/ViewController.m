@@ -33,19 +33,22 @@
                                             refreshAction:@selector(_refreshTriggered:)
                                                     plist:@"AKTA"
                                                     color:[UIColor whiteColor]
-                                                lineWidth:1.5
+                                                lineWidth:3
                                                dropHeight:80
                                                     scale:1
                                      horizontalRandomness:150
                                   reverseLoadingAnimation:YES
                                   internalAnimationFactor:0.5];
+    
+    self.automaticallyAdjustsScrollViewInsets
+
 }
 
 #pragma mark - TableView Delegate DataSource
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return 1;
+    return 2;
 }
 
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath
@@ -74,8 +77,7 @@
 
 - (void)scrollViewDidScroll:(UIScrollView *)scrollView
 {
-    NSLog(@"ContentOffset is %f", scrollView.contentOffset.y);
-    
+//    NSLog(@"ContentOffset is %f", scrollView.contentOffset.y);
     
     [self.hourseView scrollViewDidScroll];
 }

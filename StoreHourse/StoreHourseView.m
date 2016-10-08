@@ -209,6 +209,8 @@ NSString *const kY = @"y";
 
 - (CGFloat)realContentOffsetY
 {
+    NSLog(@"ContentOffset is %f  and topInset is %f", self.scrollView.contentOffset.y, self.originalTopContentInset);
+    
     return self.scrollView.contentOffset.y + self.originalTopContentInset;
 }
 
@@ -222,9 +224,8 @@ NSString *const kY = @"y";
     NSInteger index = 0;
     for (RefreshItem *item in self.refreshItems)
     {
-        CGFloat startPadding = (1 - self.internalAnimationFactor) / self.refreshItems.count * index;
+        CGFloat startPadding = (1 - self.internalAnimationFactor) / self.refreshItems.count * index++;
         CGFloat endPadding = 1 - self.internalAnimationFactor - startPadding;
-        
         if (progress == 1 || progress >= 1 - endPadding)
         {
             item.transform = CGAffineTransformIdentity;
