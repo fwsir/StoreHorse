@@ -25,7 +25,7 @@
         <!--Store Hourse-->
         <scene sceneID="yyv-cV-pGu">
             <objects>
-                <viewController id="L9s-5V-6w6" sceneMemberID="viewController">
+                <viewController id="L9s-5V-6w6" customClass="ViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fgd-1I-ydV"/>
                         <viewControllerLayoutGuide type="bottom" id="1fL-F6-3Ww"/>
@@ -33,9 +33,27 @@
                     <view key="view" contentMode="scaleToFill" id="iat-xP-STc">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="0Q1-dj-Jf3">
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="L9s-5V-6w6" id="tmR-Rs-ASj"/>
+                                    <outlet property="delegate" destination="L9s-5V-6w6" id="MUB-O4-26s"/>
+                                </connections>
+                            </tableView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="1fL-F6-3Ww" firstAttribute="top" secondItem="0Q1-dj-Jf3" secondAttribute="bottom" id="9pl-D2-ZoL"/>
+                            <constraint firstAttribute="trailing" secondItem="0Q1-dj-Jf3" secondAttribute="trailing" id="H8w-PK-3xB"/>
+                            <constraint firstItem="0Q1-dj-Jf3" firstAttribute="leading" secondItem="iat-xP-STc" secondAttribute="leading" id="P2b-oj-Lpx"/>
+                            <constraint firstItem="0Q1-dj-Jf3" firstAttribute="top" secondItem="fgd-1I-ydV" secondAttribute="bottom" id="Rl3-DJ-SIs"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Store Hourse" id="ZVv-FY-sg2"/>
+                    <connections>
+                        <outlet property="tableView" destination="0Q1-dj-Jf3" id="qgw-Od-csY"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eX6-te-ntx" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

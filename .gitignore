@@ -1,0 +1,8 @@
+
+*.xcuserstate
+*.xcworkspacedata
+*.xcscheme
+*.lock
+Pods/*
+StoreHorse.xcodeproj/xcuserdata/*
+StoreHorse.xcworkspace
